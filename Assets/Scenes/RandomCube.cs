@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -5,7 +6,7 @@ using UnityEngine;
 
 public class RandomCube : MonoBehaviour
 {
-    public GameObject PrefabCube;
+    public GameObject PrehabCube;
     private int CurrentCubes = 0; 
 
     // Start is called before the first frame update
@@ -21,13 +22,15 @@ public class RandomCube : MonoBehaviour
         // 30 fps 
         if (Time.frameCount % 30 == 0)
         {
-            // 
+            
             float x = Random.Range(-5.0f, 5.0f);
             float z = Random.Range(-5.0f, 5.0f);
-            Vector3 pos = new Vector3(x, 10.0f, z);
+            var pos = new Vector3(x, 10.0f, z);
+           
+            var q = Quaternion.AngleAxis(Random.Range(-180.0f,180.0f), pos);
+            Instantiate(PrehabCube, pos, q);
 
-            var q = new Quaternion(Random.Range(-5.0f, 5.0f), Random.Range(-5.0f, 5.0f), Random.Range(-5.0f, 5.0f), Random.Range(-5.0f, 5.0f));
-            Instantiate(PrefabCube, pos, q);
+
             CurrentCubes++;
         }
     }
