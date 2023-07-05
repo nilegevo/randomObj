@@ -3,6 +3,24 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+#add this unity object
+*.mat
+*.meta
+*.jpg
+*.prefab
+*.physicMaterial
+*.unity
+Library/
+Logs/
+obj/
+Packages/
+ProjectSettings/
+Recordings/
+Temp/
+UserSettings/
+
+
+
 # User-specific files
 *.rsuser
 *.suo
